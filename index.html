@@ -26,10 +26,51 @@
           <p class="brand">MMEx</p>
         </div>
         <div class="output-container">
-          <p class="output">0.00</p>
+          <p class="output" id="output">0.00</p>
         </div>
       </div>
       <div class="divider"></div>
+      <div class="calculation">
+        <div class="input-container container">
+          <form action="" id="form">
+          <label for="input">Input</label>
+          <input
+            type="number"
+            class="input"
+            id="input"
+            required
+            autofocus
+            autocomplete="off"
+            placeholder="0.00"
+          />
+        </div>
+        <div class="from-container container">
+          <label for="from" >From</label>
+          <select name="from" id="from" class="from">
+            <option value="" selected>Select Currency</option>
+          </select>
+        </div>
+        <div class="to-container container">
+          <label for="to">To</label>
+          <select id="to" class="to"></select>
+        </div>
+        <div class="btn-container container">
+          <button class="btn-cal" id="cal-btn">CALCULATE</button>
+        </div>
+      </form>
+      </div>
+      <div class="history-container">
+        <table class="history">
+          <thead>
+            <th>Date</th>
+            <th>From</th>
+            <th>To</th>
+          <th>Result</th>
+          </thead>
+       <tbody id="historyList">
+       </tbody>
+        </table>
+      </div>
     </section>
     <script src="js/data.js"></script>
     <script src="js/app.js"></script>

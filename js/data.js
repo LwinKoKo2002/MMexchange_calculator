@@ -3,6 +3,7 @@ var data = {
   description: "Official Website of Central Bank of Myanmar",
   timestamp: "1662451200",
   rates: {
+    MMK: "1",
     USD: "2,100.0",
     PHP: "36.768",
     KRW: "152.64",

@@ -10,29 +10,61 @@
   src: url(../fonts/MyanmarSquareLight.ttf);
 }
 :root {
-  --primary: #46c3db;
+  --primary: #41b5c9;
+  --primary-soft: #61969f;
   --secondary: #707070;
+  --secondary-soft: #f2f2f2;
   --text-light: #ffffff;
   --text-dark: #000000;
+  --radius: 5px;
 }
 * {
   padding: 0px;
   margin: 0px;
   font-family: "Noto Sans", "sans-serif", "mm";
 }
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+/* This is to remove the arrow of select element in IE */
+select::-ms-expand {
+  display: none;
+}
+select {
+  -webkit-appearance: none;
+  appearance: none;
+}
+@-moz-document url-prefix() {
+  select {
+    width: 110%;
+    background-position: right 30px center !important;
+    border: none !important;
+  }
+}
 .divider {
   height: 5px;
   background-color: var(--secondary);
+  border-radius: var(--radius);
   /* margin-top: 10px; */
 }
 .app {
-  width: 700px;
+  width: 800px;
   margin: 100px auto;
 }
+/*--------------------------------- Output Section ----------------------------------*/
 .output {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 10px;
 }
 .brand-container {
   display: flex;
@@ -47,11 +79,158 @@
   font-size: 30px;
   color: var(--secondary);
 }
-.output-container {
-}
 .output {
   font-weight: bold;
   font-size: 40px;
   color: var(--secondary);
   margin-top: 22px;
+}
+/*-------------------------------------- Calculation Section ----------------------------*/
+.calculation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.container {
+  width: 180px;
+}
+.container label {
+  margin-bottom: 10px;
+  display: block;
+}
+.input {
+  width: 100%;
+  padding: 5px 5px;
+  border-radius: var(--radius);
+  border: 1px solid var(--secondary);
+  text-align: right;
+}
+.input:focus,
+.from:focus,
+.to:focus {
+  outline: none;
+}
+.from {
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: var(--radius);
+  border: 1px solid var(--secondary);
+  background-color: var(--text-light);
+}
+.to {
+  width: 100%;
+  padding: 5px 10px;
+  border: 1px solid var(--secondary);
+  border-radius: var(--radius);
+  border: 1px solid var(--secondary);
+  background-color: var(--text-light);
+}
+.container .btn-cal {
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+  color: var(--text-light);
+  font-weight: bold;
+  font-size: 22px;
+  border-radius: var(--radius);
+}
+.container .btn-cal:active {
+  background-color: var(--primary-soft);
+}
+/*---------------------- History Section -------------------------*/
+.history-container {
+  margin-top: 20px;
+}
+.history {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+.history td,
+.history th {
+  border: 1px solid var(--text-light);
+  padding: 8px;
+}
+.history tr {
+  background-color: var(--secondary-soft);
+}
+.history tr:hover {
+  background-color: var(--secondary);
+}
+.history th:last-child,
+.history td:last-child {
+  text-align: right;
+}
+.history th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: var(--primary);
+  color: var(--text-light);
+}
+#historyList #rowspacer td {
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+@media screen and (max-width: 480px) {
+  .app {
+    width: 96%;
+    margin: 30px auto;
+  }
+  .output {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .brand-container {
+    width: 100%;
+  }
+  .brand-container img {
+    width: 50px;
+  }
+  .brand {
+    font-size: 20px;
+  }
+  .output {
+    font-size: 28px;
+  }
+  .calculation {
+    flex-wrap: wrap;
+  }
+  .container {
+    width: 100%;
+  }
+  .input-container {
+    width: 95%;
+  }
+  .from-container,
+  .to-container {
+    width: 45%;
+  }
+  label {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  input {
+    padding: 10px 10px !important;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  select {
+    font-size: 15px;
+    padding: 10px 10px !important;
+    margin-bottom: 10px;
+  }
+  .btn-cal {
+    margin: 20px 0px;
+    padding: 10px 0px;
+    font-size: 22px !important;
+  }
+  .history-container {
+    margin-top: 40px;
+  }
+  .history-container {
+    font-size: 16px;
+  }
 }
